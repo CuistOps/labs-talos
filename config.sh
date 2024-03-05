@@ -1,0 +1,12 @@
+SSH_KEY="~/.ssh/id_ed25519.pub"
+KEY_NAME="ssh-admin"
+NETWORK_NAME="talos-net"
+SUBNET_NAME="talos-subnet"
+
+KEY_NAME="ssh-admin"
+FLAVOR="a2-ram4-disk50-perf1"
+IMAGE="Debian 12 bookworm"
+INSTANCE_NAME="admin-machine"
+EXTERNAL_NET="ext-net1"
+SUBNET="talos-net"
+SEC_GROUP="allow_ssh_icmp"
