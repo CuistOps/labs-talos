@@ -10,3 +10,6 @@ curl -sL https://talos.dev/install | sh
 
 # Install talhelper
 curl https://i.jpillora.com/budimanjojo/talhelper! | sudo bash
+
+# Install j2cli
+sudo apt update && sudo apt install -y j2cli
