@@ -1,2 +1,4 @@
 openrc*
 *.raw
+.gitignore
+./cache.sh
