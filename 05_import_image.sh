@@ -1,9 +1,11 @@
 #!/bin/bash
+. ./openrc.sh
+. ./config.sh
 
-set -euix 
+set -e
 
-wget https://github.com/siderolabs/talos/releases/download/v1.6.5/openstack-amd64.raw.xz -O ./openstack-talos-amd64.raw.xz
-
-xz -d ./openstack-talos-amd64.raw.xz
-
-openstack image create "Talos v1.6.4" --container-format bare  --disk-format raw --file ./talos-img-v1.6.4.raw
+wget "${IMAGE_URL}" -O /tmp/openstack-talos-amd64.raw.xz
+xz -d /tmp/openstack-talos-amd64.raw.xz
+echo "Uploading image to OpenStack"
+openstack image create "${IMAGE_NAME}" --container-format bare  --disk-format raw --file /tmp/openstack-talos-amd64.raw
+echo "Image uploaded"
