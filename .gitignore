@@ -2,3 +2,6 @@ openrc*
 *.raw
 .gitignore
 ./cache.sh
+talos-scripts/admin_ip.txt
+talos-scripts/worker_ips.txt
+talos-scripts/control_plane_ips.txt
