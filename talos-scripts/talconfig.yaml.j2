@@ -1,0 +1,22 @@
+---
+clusterName: lab-cuistops-talos
+talosVersion: v1.6.6
+kubernetesVersion: v1.29.1
+endpoint: https://{{ controlPlaneNodes[0].IP }}:6443
+allowSchedulingOnMasters: true
+nodes:
+{{- for node in .controlPlaneNodes }}
+  - hostname: {{ HOSTNAME }}
+    ipAddress: {{ IP }}
+    controlPlane: true
+    arch: amd64
+    installDisk: /dev/vda
+{{- end }}
+{{- for node in .workerNodes }}
+  - hostname: {{ HOSTNAME }}
+    ipAddress: {{ IP }}
+    controlPlane: true
+    arch: amd64
+    installDisk: /dev/vda
+{{- end }}
+
